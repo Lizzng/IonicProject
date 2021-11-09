@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Course Info</ion-title>
+    </ion-toolbar>
+    </ion-header>
+
+    <ion-content
+    [scrollEvents]="true"
+    (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()">
+    <ion-item>
+      <ion-label>
+      Course  Breakdown
+      </ion-label>
+    </ion-item>
+  
+  <ion-card>
+    <ion-card-content>
+      <h1>Semester 1</h1>
+      <br>User Interaction Design
+      <br>Project Development & UX Treatment
+      <br>Game Systems
+      <br>Game Engines
+      <br>Social Media Applications
+      <br>VR & AR Development
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <h1>Semester 2</h1>
+      <br>Creative Digital Media
+      <br>Mobile and Tablet Application Design
+      <br>Interaction Design
+      <br>Digital Games
+      <br>Mobile and Web Applications
+      <br>Information Design
+      <br>VR Design and Development
+    </ion-card-content>
+  </ion-card>
+
+
+  
+</ion-content>
+
+

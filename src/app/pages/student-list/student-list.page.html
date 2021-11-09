@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Students</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="signOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ <!-- Create a Floating Action Button for creating students using a router link to /student page -->
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/student">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ <!-- Lists students and create a routerLink to student/:studentID, passing the current student object along 
+ to the student details page where it will be needed to read the details from the collection-->
+ <ion-button (click)="gotoOthers()" expand="full" color="secondary">Course Info</ion-button>
+  <ion-list>
+    <ion-item button *ngFor="let student of (students | async)" [routerLink]="['/student', student.studentID]">
+      {{ student.firstName }} {{ student.lastName }}
+    </ion-item>
+  </ion-list>
+</ion-content>

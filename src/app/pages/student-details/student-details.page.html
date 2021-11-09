@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Student Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked">First Name</ion-label>
+    <ion-input [(ngModel)]="student.firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Last Name</ion-label>
+    <ion-textarea [(ngModel)]="student.lastName" rows="2"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Mobile</ion-label>
+    <ion-textarea [(ngModel)]="student.moduleNo1" rows="2"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Module No</ion-label>
+    <ion-textarea [(ngModel)]="student.moduleNo2" rows="2"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Course ID</ion-label>
+    <ion-textarea [(ngModel)]="student.courseID" rows="2"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <!-- Code to add image capture -->
+    <ion-label position="stacked">Picture ID</ion-label>
+        <div class="image-upload" (click)="addImage()" tappable>
+          <p class="upload-text" *ngIf="!capturedImage && !updateImage">
+            <ion-icon name="image">
+              add your photo
+            </ion-icon>
+          </p>
+          <img [src]="capturedImage" *ngIf="capturedImage && !updateImage">
+          <img [src]="student.imageURL" *ngIf="updateImage">
+        </div>
+  </ion-item>
+</ion-content>
+
+<ion-footer *ngIf="!student.studentID">
+  <ion-toolbar color="success">
+    <ion-button expand="full" fill="clear" color="light" (click)="addStudent()">
+      <ion-icon name="checkmark" slot="start"></ion-icon>
+      Add Student
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+<ion-footer *ngIf="student.studentID">
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-button expand="block" fill="outline" color="danger" (click)="deleteStudent()">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Delete
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" fill="solid" color="success" (click)="updateStudent()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+

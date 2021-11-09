@@ -1,0 +1,8 @@
+{
+  "name": "Lab10_Solution112_Example1",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
